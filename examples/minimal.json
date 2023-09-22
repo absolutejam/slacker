@@ -1,0 +1,26 @@
+{
+  "environments": [
+    {
+      "name": "abx-xyz-foo-2",
+      "sections": [
+        {
+          "name": "Failed Pods",
+          "icon": ":whale:",
+          "failures": []
+        },
+
+        {
+          "name": "Failed Deployments",
+          "icon": ":package:",
+          "failures": ["bar"]
+        },
+
+        {
+          "name": "Failed StatefulSets",
+          "icon": ":signal_strength:",
+          "failures": ["foo"]
+        }
+      ]
+    }
+  ]
+}

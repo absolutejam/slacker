@@ -1,0 +1,111 @@
+{
+  "environments": [
+    {
+      "name": "dev1",
+      "status": "completed",
+      "namespaces": [
+        {
+          "name": "abx-xyz-foo-1",
+          "sections": [
+            {
+              "name": "Failed Pods",
+              "icon": ":whale:",
+              "failures": ["foo", "bar", "baz"]
+            },
+
+            {
+              "name": "Failed Deployments",
+              "icon": ":package:",
+              "failures": ["foo", "bar", "baz"]
+            },
+
+            {
+              "name": "Failed StatefulSets",
+              "icon": ":signal_strength:",
+              "failures": ["foo", "bar", "baz"]
+            }
+          ]
+        },
+
+        {
+          "name": "abx-xyz-foo-2",
+          "sections": [
+            {
+              "name": "Failed Pods",
+              "icon": ":whale:",
+              "failures": []
+            },
+
+            {
+              "name": "Failed Deployments",
+              "icon": ":package:",
+              "failures": ["bar"]
+            },
+
+            {
+              "name": "Failed StatefulSets",
+              "icon": ":signal_strength:",
+              "failures": ["foo"]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "dev2",
+      "status": "completed",
+      "namespaces": [
+        {
+          "name": "abx-xyz-foo-1",
+          "sections": [
+            {
+              "name": "Failed Pods",
+              "icon": ":whale:",
+              "failures": ["foo", "bar", "baz"]
+            },
+
+            {
+              "name": "Failed Deployments",
+              "icon": ":package:",
+              "failures": ["foo", "bar", "baz"]
+            },
+
+            {
+              "name": "Failed StatefulSets",
+              "icon": ":signal_strength:",
+              "failures": ["foo", "bar", "baz"]
+            }
+          ]
+        },
+
+        {
+          "name": "abx-xyz-foo-2",
+          "sections": [
+            {
+              "name": "Failed Pods",
+              "icon": ":whale:",
+              "failures": []
+            },
+
+            {
+              "name": "Failed Deployments",
+              "icon": ":package:",
+              "failures": ["bar"]
+            },
+
+            {
+              "name": "Failed StatefulSets",
+              "icon": ":signal_strength:",
+              "failures": ["foo"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "dev3",
+      "status": "pending"
+    }
+  ]
+}
