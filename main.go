@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	log.SetOutput(os.Stdout)
+	log.SetOutput(os.Stderr)
 	log.SetFormatter(&log.TextFormatter{
 		DisableColors:    false,
 		DisableTimestamp: true,

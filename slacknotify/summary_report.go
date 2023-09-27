@@ -39,6 +39,40 @@ func attachmentColour(env report.ReportEnvironment) string {
 	}
 }
 
+func buildReportUrl(reportConfig report.ReportConfig, env report.ReportEnvironment) string {
+	// TODO: Placeholder
+	return fmt.Sprintf("%s/%s/%s", reportConfig.BaseUrl, reportConfig.ReportDate, env.Name)
+}
+
+func buildSummaryReportBlocks(reportConfig report.ReportConfig, reportJson report.ReportJson) []slack.Block {
+	blocks := []slack.Block{
+		slack.NewHeaderBlock(plaintext(":stethoscope: Bring-up Healthchecks")),
+		slack.NewSectionBlock(
+			nil,
+			[]*slack.TextBlockObject{
+				markdown(":date: *Date:* 20/09/2023"),
+				markdown(":rocket: *Jenkins job:* <https://google.com|1289>"),
+			},
+			nil,
+		),
+		slack.NewContextBlock("", markdown("Non-prod environments")),
+		slack.NewDividerBlock(),
+	}
+
+	for _, env := range reportJson.Environments {
+		blocks = append(blocks, buildEnvironmentSummarySection(reportConfig, env))
+	}
+
+	blocks = append(blocks,
+		slack.NewActionBlock("",
+			linkButton(":arrow_left: Yesterday's report", "https://google.com"),
+			linkButton(":information_source: Learn more", "https://google.com"),
+		),
+	)
+
+	return blocks
+}
+
 func buildEnvironmentSummarySection(reportConfig report.ReportConfig, env report.ReportEnvironment) *slack.SectionBlock {
 	var button *slack.Accessory
 
